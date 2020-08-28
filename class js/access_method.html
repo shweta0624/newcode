@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: red;
+            font-size: 40px;
+        }
+    
+        .demo {
+            font-size: 20px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <pre>
+1.document
+1.getElementById
+2.getElementsByTagName
+
+3.getElementsByClassName
+4.querySelector
+5.querySelectorAll
+
+
+
+
+
+<p id="abc" class="xyz">color  change</p>3
+
+<h1>hello</h1>
+<h1>hello</h1>
+<h1>hello</h1>
+
+<p >access method</p> =0
+<p >access method</p>1
+<p >access method</p>2
+
+<h2 class="xyz" >data change using class name</h2>
+<h2 class="xyz">data change using class name</h2>
+<h2 class="xyz">data change using class name</h2>
+<h2 class="xyz" >data change using class name</h2>
+
+<p>hello</p>
+
+<h3>query selector</h3>
+<h3>query selector</h3>
+<h3>query selector</h3>
+
+
+
+<script>
+
+    //1.ID selector
+    document.getElementById("abc").innerHTML = "hello data is change";
+
+
+
+
+
+    //tag selector
+    var x = document.getElementsByTagName("p");
+    // x[2].innerHTML="abcd";
+    for (var i = 0; i < x.length; i++) {
+        x[i].innerHTML = "data change using tag selector";
+        x[i].style.color = "green";
+        x[i].setAttribute("class", "demo")
+
+
+    }
+
+    // class selector
+    var f = document.getElementsByClassName("xyz");
+    // f[0].innerHTML="data change using class";
+
+    for (var i = 0; i < f.length; i++) {
+        f[i].innerHTML = "class selector";
+        f[i].style.fontSize = "60px";
+
+        x[i].setAttribute("id", "demo")
+        // x[i].setAttribute("target", "_blank")
+
+    }
+
+    /* The querySelector() method 
+    returns the first element that matches a specified CSS selector(s) in the document.
+   
+   Note: The querySelector() method only returns the first element that matches the specified selectors. To return all the matches, use the querySelectorAll() method instead.*/
+
+    document.querySelector("h3").style.backgroundColor = "red";
+    //document.querySelector("#demo").style.backgroundColor = "red";
+
+    //document.querySelector(".demo").style.backgroundColor = "red";
+
+    //querySelectorAll
+
+    var g = document.querySelectorAll("h3");
+    //g[1].style.backgroundColor = "red";
+
+    for (var i = 0; i < g.length; i++) {
+        g[i].innerHTML = "data change using querySelectorAll selector";
+        g[i].style.backgroundColor = "yellow";
+        g[i].setAttribute("class", "abcd")
+
+        var target = g[i].getAttribute("class");
+        // alert(target); //
+
+    }
+
+
+//event =keyenter,click,onload,window,refresh,dblclick,hover,keypress,
+
+
+</script>
+
+
+<button onclick="addition();">add</button>
+
+<button ondblclick="substration();">substration</button>
+<button>add</button>
+<button>add</button>
+<p id ="hh"></p>
+<script>
+
+
+
+    //3 parts 
+    //1.declaration parts
+    //defination
+
+    //invoke/caaling
+
+
+
+    function addition() {
+
+        var k = Number(prompt("fn", "enter here"));
+        var l = Number(prompt("sn", "enter here"));
+        var c = k + l;
+        document.getElementById("hh").innerHTML = c;
+
+    }
+
+    addition();
+
+    function substration() {
+        var k = 12;
+        var l = 10;
+        var c = k - l;
+        document.getElementById("hh").innerHTML = c;
+
+
+    }
+
+    //parametrized function
+
+
+    function abc(a, b) {
+
+        var g = a + b;
+        console.log(g);
+    }
+    abc(30); //42
+    abc(89, 10);//99
+    abc(2, 4);//6
+    abc(8, 7);//15
+    //default parameter
+    function abcd(a, b = 0, c = 0, d = 0, e = 0) {
+
+        var g = a + b;
+        console.log(g);
+    }
+    abcd(12);
+    abcd(12, 45, 34);
+    abcd(10, 10, 10);
+    //rest parameter
+    function xyz(...data) {
+
+        console.log(data.length);
+    }
+    xyz(10);
+    xyz(10, 20);
+
+    xyz(10, 23, 45, 67);
+    xyz(10, 23, 45, 67, 90, 20, 13);
+
+
+    //Anonymous Function =>Functions that are not bound to an identifier (function name) are called as anonymous functions.  =>These functions are dynamically declared at runtime
+
+
+    var div = function (a, b) {
+        var c = a / b;
+        console.log(c);
+    }
+    div(12, 45);
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
